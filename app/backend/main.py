@@ -30,8 +30,8 @@ from pt_prompt import build_messages, parse_output, salvage_output  # noqa: E402
 from . import store  # noqa: E402
 from .store import Case, Outcome, Pet  # noqa: E402
 
-MEDIA = Path(__file__).resolve().parent / "media"
-MEDIA.mkdir(exist_ok=True)
+MEDIA = Path("/tmp/pawtriage/media") if os.environ.get("VERCEL") else Path(__file__).resolve().parent / "media"
+MEDIA.mkdir(parents=True, exist_ok=True)
 FRONTEND = ROOT / "app" / "frontend"
 BASE_MODEL = os.environ.get("FIREWORKS_BASE_MODEL", "accounts/fireworks/models/glm-5p3-flash")
 RECHECK_HOURS = {"now": 0, "24h": 24, "72h": 72, "2w": 24 * 14, "annual": 24 * 365}

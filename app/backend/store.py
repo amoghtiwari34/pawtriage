@@ -8,7 +8,10 @@ from typing import Optional
 
 from sqlmodel import Field, Session, SQLModel, create_engine
 
-DB = Path(__file__).resolve().parent / "pawtriage.db"
+import os
+_RT = Path("/tmp/pawtriage") if os.environ.get("VERCEL") else Path(__file__).resolve().parent
+_RT.mkdir(parents=True, exist_ok=True)
+DB = _RT / "pawtriage.db"
 engine = create_engine(f"sqlite:///{DB}", connect_args={"check_same_thread": False})
 
 

@@ -1,0 +1,6 @@
+notebooks/
+vendor/
+.venv*/
+results/cache/
+*.db
+.venv/
