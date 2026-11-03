@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1000 640" role="img" aria-label="Live scan sequence" xmlns="http://www.w3.org/2000/svg" width="1000" height="640"><style>
+.bgr{fill:#ffffff}
+.b{fill:#ffffff;stroke:#111111;stroke-width:1.3}
+.b.heavy{stroke-width:2.6}
+.b.dash,.a.dash{stroke-dasharray:5 4}
+.g{fill:none;stroke:#777777;stroke-width:1;stroke-dasharray:2 4}
+.gl{font:600 11px Menlo,Consolas,monospace;letter-spacing:.12em;fill:#666666}
+.t{font:700 14px "Helvetica Neue",Helvetica,Arial,sans-serif;fill:#111111}
+.s{font:400 12.5px "Helvetica Neue",Helvetica,Arial,sans-serif;fill:#555555}
+.a{fill:none;stroke:#111111;stroke-width:1.4}
+.ahp{fill:#111111}
+.al{font:400 12px "Helvetica Neue",Helvetica,Arial,sans-serif;fill:#111111}
+.lblbg{fill:#ffffff}
+.life{stroke:#888888;stroke-width:1;stroke-dasharray:3 5}
+</style><rect class="bgr" x="0" y="0" width="1000" height="640"/><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="ahp" d="M0,0 L10,5 L0,10 z"/></marker></defs><rect class="b heavy " x="18" y="20" width="144" height="52" rx="6"/>
+<text class="t" x="30" y="42">Owner&#x27;s phone</text>
+<text class="s" x="30" y="61">camera + mic</text>
+<line class="life" x1="90" y1="72" x2="90" y2="626"/>
+<rect class="b heavy " x="182" y="20" width="144" height="52" rx="6"/>
+<text class="t" x="194" y="42">Scanner server</text>
+<text class="s" x="194" y="61">Node · socket.io</text>
+<line class="life" x1="254" y1="72" x2="254" y2="626"/>
+<rect class="b heavy " x="346" y="20" width="144" height="52" rx="6"/>
+<text class="t" x="358" y="42">Voice worker</text>
+<text class="s" x="358" y="61">LiveKit agent</text>
+<line class="life" x1="418" y1="72" x2="418" y2="626"/>
+<rect class="b heavy " x="510" y="20" width="144" height="52" rx="6"/>
+<text class="t" x="522" y="42">PawTriage</text>
+<text class="s" x="522" y="61">POST /scan</text>
+<line class="life" x1="582" y1="72" x2="582" y2="626"/>
+<rect class="b heavy " x="674" y="20" width="144" height="52" rx="6"/>
+<text class="t" x="686" y="42">Fireworks</text>
+<text class="s" x="686" y="61">GLM 5.3 Flash</text>
+<line class="life" x1="746" y1="72" x2="746" y2="626"/>
+<rect class="b heavy " x="838" y="20" width="144" height="52" rx="6"/>
+<text class="t" x="850" y="42">PawTown</text>
+<text class="s" x="850" y="61">Den + map</text>
+<line class="life" x1="910" y1="72" x2="910" y2="626"/>
+<path class="a" d="M90,112 L248,112" marker-end="url(#ah)"/>
+<rect class="lblbg" x="96" y="92" width="278.59999999999997" height="16"/>
+<text class="al" x="100" y="105">1  camera frames + taps over /live socket</text>
+<path class="a" d="M90,150 L412,150" marker-end="url(#ah)"/>
+<rect class="lblbg" x="96" y="130" width="377.59999999999997" height="16"/>
+<text class="al" x="100" y="143">2  owner talks: &quot;bald patch on her face, is it serious?&quot;</text>
+<path class="a dash" d="M418,188 L96,188" marker-end="url(#ah)"/>
+<rect class="lblbg" x="96" y="168" width="404.0" height="16"/>
+<text class="al" x="100" y="181">3  agent replies by voice (listen → think → speak, barge-in)</text>
+<path class="a" d="M254,220 L288,220 L288,234 L260,234" marker-end="url(#ah)"/>
+<rect class="lblbg" x="292" y="219" width="384.2" height="16"/><text class="al" x="296" y="231">4  frame check about twice a second: is the spot in view?</text>
+<path class="a dash" d="M254,264 L96,264" marker-end="url(#ah)"/>
+<rect class="lblbg" x="96" y="244" width="397.4" height="16"/>
+<text class="al" x="100" y="257">5  a vision model boxes the spot on screen to guide framing</text>
+<path class="a" d="M254,296 L288,296 L288,310 L260,310" marker-end="url(#ah)"/>
+<rect class="lblbg" x="292" y="295" width="390.79999999999995" height="16"/><text class="al" x="296" y="307">6  spot clearly in view: the server takes the photo itself</text>
+<path class="a" d="M254,340 L576,340" marker-end="url(#ah)"/>
+<rect class="lblbg" x="260" y="320" width="225.79999999999998" height="16"/>
+<text class="al" x="264" y="333">7  POST /scan {images, note, pet}</text>
+<path class="a" d="M582,378 L740,378" marker-end="url(#ah)"/>
+<rect class="lblbg" x="588" y="358" width="331.4" height="16"/>
+<text class="al" x="592" y="371">8  same prompt + rubric, the photo as image input</text>
+<path class="a dash" d="M746,416 L588,416" marker-end="url(#ah)"/>
+<rect class="lblbg" x="588" y="396" width="159.79999999999998" height="16"/>
+<text class="al" x="592" y="409">9  JSON answer (~1.5 s)</text>
+<path class="a" d="M582,448 L616,448 L616,462 L588,462" marker-end="url(#ah)"/>
+<rect class="lblbg" x="620" y="447" width="265.4" height="16"/><text class="al" x="624" y="459">10 strict parse → safety rules → report</text>
+<path class="a dash" d="M582,492 L260,492" marker-end="url(#ah)"/>
+<rect class="lblbg" x="260" y="472" width="331.4" height="16"/>
+<text class="al" x="264" y="485">11 report {urgency: yellow, findings, next steps}</text>
+<path class="a" d="M582,530 L904,530" marker-end="url(#ah)"/>
+<rect class="lblbg" x="588" y="510" width="364.4" height="16"/>
+<text class="al" x="592" y="523">12 pet named in a Den → a real case: quests, contagion</text>
+<path class="a dash" d="M254,568 L96,568" marker-end="url(#ah)"/>
+<rect class="lblbg" x="96" y="548" width="186.2" height="16"/>
+<text class="al" x="100" y="561">13 report card on the phone</text>
+<path class="a" d="M254,606 L412,606" marker-end="url(#ah)"/>
+<rect class="lblbg" x="260" y="586" width="344.59999999999997" height="16"/>
+<text class="al" x="264" y="599">14 verdict handed to the agent, which says it aloud</text></svg>

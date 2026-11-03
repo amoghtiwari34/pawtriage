@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1000 540" role="img" aria-label="PawTriage system architecture" xmlns="http://www.w3.org/2000/svg" width="1000" height="540"><style>
+.bgr{fill:#ffffff}
+.b{fill:#ffffff;stroke:#111111;stroke-width:1.3}
+.b.heavy{stroke-width:2.6}
+.b.dash,.a.dash{stroke-dasharray:5 4}
+.g{fill:none;stroke:#777777;stroke-width:1;stroke-dasharray:2 4}
+.gl{font:600 11px Menlo,Consolas,monospace;letter-spacing:.12em;fill:#666666}
+.t{font:700 14px "Helvetica Neue",Helvetica,Arial,sans-serif;fill:#111111}
+.s{font:400 12.5px "Helvetica Neue",Helvetica,Arial,sans-serif;fill:#555555}
+.a{fill:none;stroke:#111111;stroke-width:1.4}
+.ahp{fill:#111111}
+.al{font:400 12px "Helvetica Neue",Helvetica,Arial,sans-serif;fill:#111111}
+.lblbg{fill:#ffffff}
+.life{stroke:#888888;stroke-width:1;stroke-dasharray:3 5}
+</style><rect class="bgr" x="0" y="0" width="1000" height="540"/><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="ahp" d="M0,0 L10,5 L0,10 z"/></marker></defs><rect class="g" x="10" y="10" width="230" height="520" rx="10"/><text class="gl" x="24" y="30">INPUTS</text>
+<rect class="b " x="26" y="44" width="198" height="80" rx="6"/>
+<text class="t" x="38" y="66">Owner message + profile</text>
+<text class="s" x="38" y="85">dog or cat, breed, age,</text>
+<text class="s" x="38" y="102">weight, meds</text>
+<rect class="b " x="26" y="140" width="198" height="96" rx="6"/>
+<text class="t" x="38" y="162">Photo or video</text>
+<text class="s" x="38" y="181">photo resized to 1024 px</text>
+<text class="s" x="38" y="198">video: 6 frames + a</text>
+<text class="s" x="38" y="215">2×3 contact sheet (ffmpeg)</text>
+<rect class="b " x="26" y="252" width="198" height="96" rx="6"/>
+<text class="t" x="38" y="274">Live scanner</text>
+<text class="s" x="38" y="293">phone camera + voice</text>
+<text class="s" x="38" y="310">frames picked by the</text>
+<text class="s" x="38" y="327">scanner, sent to /scan</text>
+<rect class="g" x="270" y="10" width="460" height="330" rx="10"/><text class="gl" x="284" y="30">PAWTRIAGE API · FastAPI</text>
+<rect class="b " x="290" y="44" width="200" height="80" rx="6"/>
+<text class="t" x="302" y="66">Prompt builder</text>
+<text class="s" x="302" y="85">one prompt for every system,</text>
+<text class="s" x="302" y="102">hash-checked, temperature 0</text>
+<rect class="b " x="290" y="144" width="200" height="80" rx="6"/>
+<text class="t" x="302" y="166">Parse + validate</text>
+<text class="s" x="302" y="185">strict vocabulary for scoring;</text>
+<text class="s" x="302" y="202">app repairs off-vocab words</text>
+<rect class="b heavy " x="290" y="244" width="200" height="80" rx="6"/>
+<text class="t" x="302" y="266">Safety layer</text>
+<text class="s" x="302" y="285">toxins, can&#x27;t breathe, can&#x27;t pee:</text>
+<text class="s" x="302" y="302">rules can only RAISE urgency</text>
+<rect class="b " x="510" y="144" width="204" height="180" rx="6"/>
+<text class="t" x="522" y="166">Triage result</text>
+<text class="s" x="522" y="185">urgency tier</text>
+<text class="s" x="522" y="202">possible conditions</text>
+<text class="s" x="522" y="219">red flags</text>
+<text class="s" x="522" y="236">do now · watch for · prevent</text>
+<text class="s" x="522" y="253">recheck time</text>
+<text class="s" x="522" y="270">cost + latency per call</text>
+<rect class="g" x="760" y="10" width="230" height="330" rx="10"/><text class="gl" x="774" y="30">FIREWORKS</text>
+<rect class="b " x="776" y="44" width="198" height="80" rx="6"/>
+<text class="t" x="788" y="66">GLM 5.3 Flash + rubric</text>
+<text class="s" x="788" y="85">serverless, OpenAI-compatible</text>
+<text class="s" x="788" y="102">≈ $0.001 per triage</text>
+<rect class="b dash " x="776" y="140" width="198" height="96" rx="6"/>
+<text class="t" x="788" y="162">Vision LoRA</text>
+<text class="s" x="788" y="181">rank 16, trained on Fireworks</text>
+<text class="s" x="788" y="198">serverless training; scored on</text>
+<text class="s" x="788" y="215">a 4×B300 deployment</text>
+<rect class="b dash " x="776" y="252" width="198" height="72" rx="6"/>
+<text class="t" x="788" y="274">Data generation</text>
+<text class="s" x="788" y="293">Kimi K3 wrote the</text>
+<text class="s" x="788" y="310">synthetic owner messages</text>
+<rect class="g" x="270" y="370" width="720" height="160" rx="10"/><text class="gl" x="284" y="390">CARE COORDINATION</text>
+<rect class="b " x="290" y="404" width="250" height="108" rx="6"/>
+<text class="t" x="302" y="426">Den engine (SQLite)</text>
+<text class="s" x="302" y="445">quests from the plan · double-</text>
+<text class="s" x="302" y="462">dose guard · contagion fan-out ·</text>
+<text class="s" x="302" y="479">emergency pause · adherence %</text>
+<rect class="b " x="560" y="404" width="200" height="108" rx="6"/>
+<text class="t" x="572" y="426">PawTown 3D</text>
+<text class="s" x="572" y="445">Three.js map of SF</text>
+<text class="s" x="572" y="462">real OSM vets + dog parks</text>
+<text class="s" x="572" y="479">emergency route to 24h ER</text>
+<rect class="b " x="780" y="404" width="194" height="108" rx="6"/>
+<text class="t" x="792" y="426">Vet packet PDF</text>
+<text class="s" x="792" y="445">timeline, findings,</text>
+<text class="s" x="792" y="462">adherence, caregiver log</text>
+<path class="a" d="M224,84 L290,84" marker-end="url(#ah)"/>
+<path class="a" d="M224,188 L256,188 L256,96 L290,96" marker-end="url(#ah)"/>
+<path class="a" d="M224,300 L262,300 L262,108 L290,108" marker-end="url(#ah)"/>
+<path class="a" d="M490,70 L776,70" marker-end="url(#ah)"/><rect class="lblbg" x="579.5" y="50.0" width="107.0" height="16"/><text class="al" x="633" y="62" text-anchor="middle">chat completion</text>
+<path class="a" d="M776,112 L502,112 L502,184 L490,184" marker-end="url(#ah)"/><rect class="lblbg" x="599.7" y="94.0" width="80.6" height="16"/><text class="al" x="640" y="106" text-anchor="middle">JSON answer</text>
+<path class="a" d="M390,224 L390,244" marker-end="url(#ah)"/>
+<path class="a" d="M490,284 L510,284" marker-end="url(#ah)"/>
+<path class="a" d="M612,324 L612,350 L415,350 L415,404" marker-end="url(#ah)"/><rect class="lblbg" x="421.0" y="352.0" width="219.2" height="16"/><text class="al" x="425" y="364" text-anchor="start">every triage, follow-up and scan</text>
+<path class="a" d="M540,458 L560,458" marker-end="url(#ah)"/>
+<path class="a" d="M760,458 L780,458" marker-end="url(#ah)"/></svg>
